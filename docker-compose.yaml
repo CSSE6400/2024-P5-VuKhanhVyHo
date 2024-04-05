@@ -4,6 +4,7 @@ services:
   database:
     image: postgres:latest
     restart: always
+    platform: linux/amd64
     environment:
       POSTGRES_PASSWORD: verySecretPassword
       POSTGRES_USER: administrator
@@ -13,6 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      platform: linux/amd64
     restart: always
     volumes:
       - ./todo:/app/todo

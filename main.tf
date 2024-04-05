@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 locals { 
-    image = "211125525860.dkr.ecr.us-east-1.amazonaws.com/taskoverflow:latest" 
+    image = "${docker_image.taskoverflow.name}"
     database_username = "administrator" 
     database_password = "foobarbaz" # this is bad 
 } 
